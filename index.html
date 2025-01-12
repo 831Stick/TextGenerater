@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Test</title>
+</head>
+<body>
+    <input type="text" id="userInput" placeholder="Type your text here...">
+    <input type="number" id="fontSizeInput" placeholder="Font size (default: 30)">
+    <input type="color" id="color" placeholder="Color">
+    <label><input type="checkbox" id="bold"> Bold</label>
+    <label><input type="checkbox" id="italic"> Italic</label>
+    <label><input type="checkbox" id="blueText"> Blue Text</label>
+    <button onclick="generateText()">Generate Text</button>
+    <button onclick="generateColorfulText()">Generate Colorful Text</button>
+    <pre id="specialHtmlOutput" style="margin-top: 20px; background-color: #f0f0f0; padding: 10px;"></pre>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
