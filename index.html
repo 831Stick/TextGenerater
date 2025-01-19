@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Test</title>
+    <style>
+        button.copy-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button.copy-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="userInput" placeholder="Type your text here...">
@@ -14,7 +26,7 @@
     <label><input type="checkbox" id="blueText"> Blue Text</label>
     <button onclick="generateText()">Generate Text</button>
     <button onclick="generateColorfulText()">Generate Colorful Text</button>
-    <button onclick="copyToClipboard()">Copy</button>
+    <button class="copy-button" onclick="copyToClipboard()">Copy</button>
     <pre id="specialHtmlOutput" style="margin-top: 20px; background-color: #f0f0f0; padding: 10px;"></pre>
 
     <!-- Link to the external JavaScript file -->
