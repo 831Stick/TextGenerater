@@ -101,3 +101,13 @@ function generateColorfulText() {
     // Display the special HTML code
     specialHtmlOutput.textContent = colorfulText;
 }
+
+function copyToClipboard() {
+    const specialHtmlOutput = document.getElementById('specialHtmlOutput');
+    const text = specialHtmlOutput.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
