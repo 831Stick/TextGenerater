@@ -2,13 +2,13 @@ function generateFormattedText(input, options) {
     let formattedText = input;
 
     if (options.size) {
-        formattedText = `<ųũźť=${options.size}>${formattedText}</ųũźť>`;
+        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
     }
     if (options.color) {
-        formattedText = `<ͣolor=${options.color}>${formattedText}</ͣolor>`;
+        formattedText = `<cůlor=${options.color}>${formattedText}</cůlor>`;
     } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
         // 日本語の単色でサイズ指定がない場合
-        formattedText = `<ͣolor=#ff9966>${formattedText}</ͣolor>`;
+        formattedText = `<cůlor=#ff9966>${formattedText}</cůlor>`;
     }
     if (options.bold) {
         formattedText = `<b>${formattedText}</b>`;
@@ -45,9 +45,9 @@ function generateColorfulTextContent(input, options) {
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        let charText = `<ͣolor=${color}>${char}</ͣolor>`;
+        let charText = `<cůlor=${color}>${char}</cůlor>`;
         if (options.size) {
-            charText = `<ͣolor=${color}><ųũźť=${options.size}>${char}</ųũźť></ͣolor>`;
+            charText = `<cůlor=${color}><siŚe=${options.size}>${char}</siŚe></cůlor>`;
         }
         colorfulText += charText;
     }
