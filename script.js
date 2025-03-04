@@ -2,22 +2,21 @@ function generateFormattedText(input, options) {
     let formattedText = input;
 
     if (options.size) {
-        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
+        formattedText = `<size=${options.size}>${formattedText}</size>`;
     }
-    if (options.color) {
-        formattedText = `<cůlor=${options.color}>${formattedText}</cůlor>`;
+    if (options.colorCode) {
+        formattedText = `<color=${options.colorCode}>${formattedText}</color>`;
+    } else if (options.color) {
+        formattedText = `<color=${options.color}>${formattedText}</color>`;
     } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
         // 日本語の単色でサイズ指定がない場合
-        formattedText = `<cůlor=#ff9966>${formattedText}</cůlor>`;
+        formattedText = `<color=#ff9966>${formattedText}</color>`;
     }
     if (options.bold) {
         formattedText = `<b>${formattedText}</b>`;
     }
     if (options.italic) {
-        formattedText = `<ͩ>${formattedText}</ͩ>`;
-    }
-    if (options.blueText) {
-        formattedText = `<͡>${formattedText}</͡>`;
+        formattedText = `<i>${formattedText}</i>`;
     }
 
     return formattedText;
@@ -37,17 +36,17 @@ function generateColorfulTextContent(input, options) {
         "#fae0c0", // Pastel orange
         "#fac0c0", // Pastel red
     ];
-    let colorfulText = options.italic ? "<ͩ>" : "";
+    let colorfulText = options.italic ? "<i>" : "";
     if (options.bold) {
         colorfulText += "<b>";
     }
 
     for (let i = 0; i < input.length; i++) {
-        const color = colors[i % colors.length];
+        const color = options.colorCode || colors[i % colors.length];
         const char = input[i];
-        let charText = `<cůlor=${color}>${char}</cůlor>`;
+        let charText = `<color=${color}>${char}</color>`;
         if (options.size) {
-            charText = `<cůlor=${color}><siŚe=${options.size}>${char}</siŚe></cůlor>`;
+            charText = `<color=${color}><size=${options.size}>${char}</size></color>`;
         }
         colorfulText += charText;
     }
@@ -56,7 +55,7 @@ function generateColorfulTextContent(input, options) {
         colorfulText += "</b>";
     }
     if (options.italic) {
-        colorfulText += " </ͩ>";
+        colorfulText += "</i>";
     }
     return colorfulText;
 }
@@ -71,7 +70,7 @@ function generateText() {
         italic: document.getElementById('italic').checked,
         size: fontSizeInput || null,
         color: document.getElementById('color').value || null,
-        blueText: document.getElementById('blueText').checked
+        colorCode: document.getElementById('colorCodeInput').value || null
     };
 
     let formattedText = generateFormattedText(userInput, options);
@@ -90,7 +89,8 @@ function generateColorfulText() {
     const options = {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
-        size: document.getElementById('fontSizeInput').value || null
+        size: document.getElementById('fontSizeInput').value || null,
+        colorCode: document.getElementById('colorCodeInput').value || null
     };
 
     const colorfulText = generateColorfulTextContent(userInput, options);
