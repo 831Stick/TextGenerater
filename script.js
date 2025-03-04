@@ -10,7 +10,7 @@ function generateFormattedText(input, options) {
         formattedText = `<color=${options.color}>${formattedText}</color>`;
     } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
         // 日本語の単色でサイズ指定がない場合
-        formattedText = `<color=#ff9966>${formattedText}</color>`;
+        formattedText = `<color=#000000>${formattedText}</color>`;
     }
     if (options.bold) {
         formattedText = `<b>${formattedText}</b>`;
