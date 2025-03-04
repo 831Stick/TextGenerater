@@ -24,17 +24,17 @@ function generateFormattedText(input, options) {
 
 function generateColorfulTextContent(input, options) {
     const colors = [
-        "#fac0c0", // Pastel Red
-        "#fac0e7", // Pastel Pink
-        "#eac0fa", // Pastel Magenta
-        "#c0c4fa", // Pastel Blue
-        "#c0e8fa", // Pastel sky blue
-        "#c0faea", // Pastel light green
-        "#c0fac5", // Pastel green
-        "#dffac0", // Pastel weed
-        "#faf4c0", // Pastel yellow
-        "#fae0c0", // Pastel orange
-        "#fac0c0", // Pastel red
+        "#ff7f7f", // Pastel Red
+        "#ff7fbf", // Pastel Pink
+        "#ff7fff", // Pastel Magenta
+        "#bf7fff", // Pastel Purple
+        "#7fbfff", // Pastel blue
+        "#7fffff", // Pastel sky blue
+        "#7fffbf", // Pastel green
+        "#7fff7f", // Pastel weed
+        "#bfff7f", // Pastel light green
+        "#ffff7f", // Pastel Yellow
+        "#ffbf7f", // Pastel Orange
     ];
     let colorfulText = options.italic ? "<i>" : "";
     if (options.bold) {
