@@ -2,21 +2,21 @@ function generateFormattedText(input, options) {
     let formattedText = input;
 
     if (options.size) {
-        formattedText = `<size=${options.size}>${formattedText}</size>`;
+        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
     }
     if (options.colorCode) {
-        formattedText = `<color=${options.colorCode}>${formattedText}</color>`;
+        formattedText = `<cůlor=${options.colorCode}>${formattedText}</cůlor>`;
     } else if (options.color) {
-        formattedText = `<color=${options.color}>${formattedText}</color>`;
+        formattedText = `<cůlor=${options.color}>${formattedText}</cůlor>`;
     } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
         // 日本語の単色でサイズ指定がない場合
-        formattedText = `<color=#000000>${formattedText}</color>`;
+        formattedText = `<cůlor=#000000>${formattedText}</cůlor>`;
     }
     if (options.bold) {
         formattedText = `<b>${formattedText}</b>`;
     }
     if (options.italic) {
-        formattedText = `<i>${formattedText}</i>`;
+        formattedText = `<ͩ>${formattedText}</ͩ>`;
     }
 
     return formattedText;
@@ -36,7 +36,7 @@ function generateColorfulTextContent(input, options) {
         "#FFFF88", // Pastel Yellow
         "#FFBF88", // Pastel Orange
     ];
-    let colorfulText = options.italic ? "<i>" : "";
+    let colorfulText = options.italic ? "<ͩ>" : "";
     if (options.bold) {
         colorfulText += "<b>";
     }
@@ -44,9 +44,9 @@ function generateColorfulTextContent(input, options) {
     for (let i = 0; i < input.length; i++) {
         const color = options.colorCode || colors[i % colors.length];
         const char = input[i];
-        let charText = `<color=${color}>${char}</color>`;
+        let charText = `<cůlor=${color}>${char}</cůlor>`;
         if (options.size) {
-            charText = `<color=${color}><size=${options.size}>${char}</size></color>`;
+            charText = `<cůlor=${color}><siŚe=${options.size}>${char}</siŚe></cůlor>`;
         }
         colorfulText += charText;
     }
@@ -55,7 +55,7 @@ function generateColorfulTextContent(input, options) {
         colorfulText += "</b>";
     }
     if (options.italic) {
-        colorfulText += "</i>";
+        colorfulText += "</ͩ>";
     }
     return colorfulText;
 }
