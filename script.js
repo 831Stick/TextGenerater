@@ -1,9 +1,6 @@
 function generateFormattedText(input, options) {
     let formattedText = input;
 
-    if (options.size) {
-        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
-    }
     if (options.colorCode) {
         formattedText = `<cůlor=${options.colorCode}>${formattedText}</cůlor>`;
     } else if (options.color) {
@@ -14,6 +11,9 @@ function generateFormattedText(input, options) {
     }
     if (options.bold) {
         formattedText = `<b>${formattedText}</b>`;
+    }
+    if (options.size) {
+        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
     }
     if (options.italic) {
         formattedText = `<ͩ>${formattedText}</ͩ>`;
@@ -40,17 +40,20 @@ function generateColorfulTextContent(input, options) {
     if (options.bold) {
         colorfulText += "<b>";
     }
+    if (options.size) {
+        colorfulText += `<siŚe=${options.size}>`;
+    }
 
     for (let i = 0; i < input.length; i++) {
         const color = options.colorCode || colors[i % colors.length];
         const char = input[i];
         let charText = `<cůlor=${color}>${char}</cůlor>`;
-        if (options.size) {
-            charText = `<cůlor=${color}><siŚe=${options.size}>${char}</siŚe></cůlor>`;
-        }
         colorfulText += charText;
     }
 
+    if (options.size) {
+        colorfulText += `</siŚe>`;
+    }
     if (options.bold) {
         colorfulText += "</b>";
     }
