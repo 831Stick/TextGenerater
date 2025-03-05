@@ -51,6 +51,7 @@ function generateColorfulTextContent(input, options) {
     }
     if (options.size) {
         colorfulText += `<siŚe=${options.size}>`;
+        htmlOutputText += `<span style="font-size:${options.size}px;">`;
     }
 
     for (let i = 0; i < input.length; i++) {
@@ -64,6 +65,7 @@ function generateColorfulTextContent(input, options) {
 
     if (options.size) {
         colorfulText += `</siŚe>`;
+        htmlOutputText += `</span>`;
     }
     if (options.bold) {
         colorfulText += "</b>";
