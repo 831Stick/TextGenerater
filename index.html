@@ -15,6 +15,26 @@
         button.copy-button:hover {
             background-color: darkgreen;
         }
+        .output-container {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .light-gray-background {
+            background-color: #d3d3d3; /* Light gray background */
+        }
+        .white-background {
+            background-color: #ffffff; /* White background */
+        }
+        .colored-background {
+            background-color: #0D325F;
+            color: white;
+        }
+        .black-border {
+            border: 1px solid black;
+        }
+        .blue-border {
+            border: 1px solid #0D325F;
+        }
     </style>
 </head>
 <body>
@@ -27,7 +47,9 @@
     <button onclick="generateText()">単色テキスト生成</button>
     <button onclick="generateColorfulText()">カラフルテキスト生成</button>
     <button class="copy-button" onclick="copyToClipboard()">コピー</button>
-    <pre id="specialHtmlOutput" style="margin-top: 20px; background-color: #f0f0f0; padding: 10px;"></pre>
+    <pre id="specialHtmlOutput" class="output-container light-gray-background"></pre>
+    <pre id="HtmlOutputColored" class="output-container colored-background black-border"></pre>
+    <pre id="HtmlOutputWhite" class="output-container white-background blue-border"></pre>
 
     <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
