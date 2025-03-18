@@ -17,10 +17,6 @@ function generateFormattedText(input, options) {
         formattedText = `<b>${formattedText}</b>`;
         htmlOutputText = `<b>${htmlOutputText}</b>`;
     }
-    if (options.size) {
-        formattedText = `<siŚe=${options.size}>${formattedText}</siŚe>`;
-        htmlOutputText = `<span style="font-size:${options.size}px;">${htmlOutputText}</span>`;
-    }
     if (options.italic) {
         formattedText = `<ͩ>${formattedText}</ͩ>`;
         htmlOutputText = `<i>${htmlOutputText}</i>`;
@@ -49,10 +45,6 @@ function generateColorfulTextContent(input, options) {
         colorfulText += "<b>";
         htmlOutputText += "<b>";
     }
-    if (options.size) {
-        colorfulText += `<siŚe=${options.size}>`;
-        htmlOutputText += `<span style="font-size:${options.size}px;">`;
-    }
 
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
@@ -63,10 +55,6 @@ function generateColorfulTextContent(input, options) {
         htmlOutputText += htmlCharText;
     }
 
-    if (options.size) {
-        colorfulText += `</siŚe>`;
-        htmlOutputText += `</span>`;
-    }
     if (options.bold) {
         colorfulText += "</b>";
         htmlOutputText += "</b>";
@@ -80,7 +68,6 @@ function generateColorfulTextContent(input, options) {
 
 function generateText() {
     const userInput = document.getElementById('userInput').value;
-    const fontSizeInput = document.getElementById('fontSizeInput').value;
     const specialHtmlOutput = document.getElementById('specialHtmlOutput');
     const htmlOutputColored = document.getElementById('HtmlOutputColored');
     const htmlOutputWhite = document.getElementById('HtmlOutputWhite');
@@ -88,7 +75,6 @@ function generateText() {
     const options = {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
-        size: fontSizeInput || null,
         color: document.getElementById('color').value || null,
         colorCode: document.getElementById('colorCodeInput').value || null
     };
@@ -115,7 +101,6 @@ function generateColorfulText() {
     const options = {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
-        size: document.getElementById('fontSizeInput').value || null,
         colorCode: document.getElementById('colorCodeInput').value || null
     };
 
