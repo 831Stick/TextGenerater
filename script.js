@@ -3,14 +3,14 @@ function generateFormattedText(input, options) {
     let htmlOutputText = input;
 
     if (options.colorCode) {
-        formattedText = `<cůlor=${options.colorCode}>${formattedText}</cůlor>`;
+        formattedText = `<color=${options.colorCode}>${formattedText}</š>`;
         htmlOutputText = `<font style="color:${options.colorCode};">${htmlOutputText}</font>`;
     } else if (options.color) {
-        formattedText = `<cůlor=${options.color}>${formattedText}</cůlor>`;
+        formattedText = `<color=${options.color}>${formattedText}</š>`;
         htmlOutputText = `<font style="color:${options.color};">${htmlOutputText}</font>`;
     } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
         // 日本語の単色でサイズ指定がない場合
-        formattedText = `<cůlor=#000000>${formattedText}</cůlor>`;
+        formattedText = `<color=#000000>${formattedText}</š>`;
         htmlOutputText = `<font style="color:#000000;">${htmlOutputText}</font>`;
     }
     if (options.bold) {
@@ -57,7 +57,7 @@ function generateColorfulTextContent(input, options) {
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        let charText = `<cůlor=${color}>${char}</cůlor>`;
+        let charText = `<color=${color}>${char}</š>`;
         let htmlCharText = `<font style="color:${color};">${char}</font>`;
         colorfulText += charText;
         htmlOutputText += htmlCharText;
