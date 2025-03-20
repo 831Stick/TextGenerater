@@ -112,6 +112,7 @@ button.copy-button:hover {
     background-color: #f8f9fa;
     min-height: 50px;
     overflow-x: auto;
+    text-align: left;
 }
 
 .light-gray-background {
