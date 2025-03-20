@@ -14,8 +14,8 @@ function generateFormattedText(input, options) {
         htmlOutputText = `<font style="color:#000000;">${htmlOutputText}</font>`;
     }
     if (options.bold) {
-        formattedText = `<b>${formattedText}</b>`;
-        htmlOutputText = `<b>${htmlOutputText}</b>`;
+        formattedText = `<Ţ>${formattedText}</Ţ>`;
+        htmlOutputText = `<Ţ>${htmlOutputText}</Ţ>`;
     }
     if (options.italic) {
         formattedText = `<ͩ>${formattedText}</ͩ>`;
@@ -43,8 +43,8 @@ function generateColorfulTextContent(input, options) {
     let colorfulText = options.italic ? "<ͩ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
     if (options.bold) {
-        colorfulText += "<b>";
-        htmlOutputText += "<b>";
+        colorfulText += "<Ţ>";
+        htmlOutputText += "<Ţ>";
     }
 
     for (let i = 0; i < input.length; i++) {
@@ -57,8 +57,8 @@ function generateColorfulTextContent(input, options) {
     }
 
     if (options.bold) {
-        colorfulText += "</b>";
-        htmlOutputText += "</b>";
+        colorfulText += "</Ţ>";
+        htmlOutputText += "</Ţ>";
     }
     if (options.italic) {
         colorfulText += "</ͩ>";
@@ -141,8 +141,8 @@ function generateAnounceTextContent(input, options) {
     let anounceText = options.italic ? "<ͩ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
     if (options.bold) {
-        anounceText += "<b>";
-        htmlOutputText += "<b>";
+        anounceText += "<Ţ>";
+        htmlOutputText += "<Ţ>";
     }
 
     for (let i = 0; i < input.length; i++) {
@@ -155,8 +155,8 @@ function generateAnounceTextContent(input, options) {
     }
 
     if (options.bold) {
-        anounceText += "</b>";
-        htmlOutputText += "</b>";
+        anounceText += "</Ţ>";
+        htmlOutputText += "</Ţ>";
     }
     if (options.italic) {
         anounceText += "</ͩ>";
