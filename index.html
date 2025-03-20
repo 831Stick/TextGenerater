@@ -10,6 +10,8 @@
     <div class="container">
         <img src="White Out Survival.png" alt="white out survival" class="whiteOutSurvival">
         <img src="Text Generater.png" alt="text generater" class="textGenerater">
+        <textarea id="memo" placeholder="メモ" rows="10" cols="50"></textarea>
+        <button class="copy-button" onclick="copyToClipboard('memo')">コピー</button>
         <div class="input-group">
             <input type="color" id="color" placeholder="Color">
             <input type="text" id="colorCodeInput" placeholder="カラー指定(例、#ff0000)">
@@ -25,12 +27,10 @@
             <button onclick="geneAnounceText()">アナウンステキスト生成</button>
         </div>
         <button class="copy-button" onclick="copyToClipboard('specialHtmlOutput')">コピー</button>
-        <pre id="specialHtmlOutput" class="output light-gray-background"></pre>
+        <pre id="specialHtmlOutput" class="output light-gray-background"></pre> 
         <pre id="HtmlOutputColored" class="output colored-background black-border"></pre>
         <pre id="HtmlOutputWhite" class="output white-background blue-border"></pre>
         <pre id="HtmlOutputYellow" class="output yellow-background"></pre>
-        <textarea id="memo" placeholder="メモ" rows="10" cols="50"></textarea>
-        <button class="copy-button" onclick="copyToClipboard('memo')">コピー</button>
     </div>
     <script src="script.js"></script>
 </body>
