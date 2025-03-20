@@ -19,26 +19,25 @@ body {
     width: 100%;
 }
 img.whiteOutSurvival {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 70%;
+    margin-bottom: 5px;
 }
 img.textGenerater {
-    width: 70%;
-    margin-bottom: 20px;
+    width: 40%;
+    margin-bottom: 10px;
 }
-
+/*
 h1 {
     font-size: 24px;
     margin-bottom: 5px;
     color: #d3d3d3;
 }
-
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ff69b4;
 }
-
+    */
 .input-group {
     display: flex;
     justify-content: center;
@@ -61,13 +60,13 @@ input[type="text"] {
 
 textarea {
     width: 100%;
-    border: 2px solid #ff0000;
+    border: 2px solid #b9b0b0;
     border-radius: 5px;
     margin-bottom: 15px;
 }
 
 .checkbox-group {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 label {
@@ -76,11 +75,11 @@ label {
 }
 
 .buttons {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 button {
-    margin: 5px 0;
+    margin: 2px 0;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
