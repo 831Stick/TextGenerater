@@ -15,7 +15,7 @@ function generateFormattedText(input, options) {
     }
     if (options.bold) {
         formattedText = `<Ţ>${formattedText}</Ţ>`;
-        htmlOutputText = `<Ţ>${htmlOutputText}</Ţ>`;
+        htmlOutputText = `<b>${htmlOutputText}</b>`;
     }
     if (options.italic) {
         formattedText = `<ͩ>${formattedText}</ͩ>`;
@@ -44,7 +44,7 @@ function generateColorfulTextContent(input, options) {
     let htmlOutputText = options.italic ? "<i>" : "";
     if (options.bold) {
         colorfulText += "<Ţ>";
-        htmlOutputText += "<Ţ>";
+        htmlOutputText += "<b>";
     }
 
     for (let i = 0; i < input.length; i++) {
@@ -58,7 +58,7 @@ function generateColorfulTextContent(input, options) {
 
     if (options.bold) {
         colorfulText += "</Ţ>";
-        htmlOutputText += "</Ţ>";
+        htmlOutputText += "</b>";
     }
     if (options.italic) {
         colorfulText += "</ͩ>";
@@ -142,7 +142,7 @@ function generateAnounceTextContent(input, options) {
     let htmlOutputText = options.italic ? "<i>" : "";
     if (options.bold) {
         anounceText += "<Ţ>";
-        htmlOutputText += "<Ţ>";
+        htmlOutputText += "<b>";
     }
 
     for (let i = 0; i < input.length; i++) {
@@ -156,7 +156,7 @@ function generateAnounceTextContent(input, options) {
 
     if (options.bold) {
         anounceText += "</Ţ>";
-        htmlOutputText += "</Ţ>";
+        htmlOutputText += "</b>";
     }
     if (options.italic) {
         anounceText += "</ͩ>";
