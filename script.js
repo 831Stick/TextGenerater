@@ -1,25 +1,30 @@
 function generateFormattedText(input, options) {
-    let formattedText = input;
-    let htmlOutputText = input;
+    let formattedText = options.italic ? "<ͩ>" : "";
+    let htmlOutputText = options.italic ? "<i>" : "";
 
-    if (options.colorCode) {
-        formattedText = `<color=${options.colorCode}>${formattedText}</š>`;
-        htmlOutputText = `<font style="color:${options.colorCode};">${htmlOutputText}</font>`;
-    } else if (options.color) {
-        formattedText = `<color=${options.color}>${formattedText}</š>`;
-        htmlOutputText = `<font style="color:${options.color};">${htmlOutputText}</font>`;
-    } else if (!options.size && /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF]/.test(input)) {
-        // 日本語の単色でサイズ指定がない場合
-        formattedText = `<color=#000000>${formattedText}</š>`;
-        htmlOutputText = `<font style="color:#000000;">${htmlOutputText}</font>`;
-    }
     if (options.bold) {
-        formattedText = `<Ţ>${formattedText}</Ţ>`;
-        htmlOutputText = `<b>${htmlOutputText}</b>`;
+        formattedText += "<Ţ>";
+        htmlOutputText += "<b>";
+    }
+
+    if (options.size) {
+        formattedText += `<ųũŚť=${options.size}>`;
+    }
+
+    formattedText += `<color=${options.colorCode || options.color || "#000000"}>${input}</š>`;
+    htmlOutputText += `<span style="color:${options.colorCode || options.color || "#000000"}; font-size:${options.size || "inherit"};">${input}</span>`;
+
+    if (options.size) {
+        formattedText += `</ųũŚť>`;
+    }
+
+    if (options.bold) {
+        formattedText += "</Ţ>";
+        htmlOutputText += "</b>";
     }
     if (options.italic) {
-        formattedText = `<ͩ>${formattedText}</ͩ>`;
-        htmlOutputText = `<i>${htmlOutputText}</i>`;
+        formattedText += "</ͩ>";
+        htmlOutputText += "</i>";
     }
 
     return { formattedText, htmlOutputText };
@@ -42,18 +47,25 @@ function generateColorfulTextContent(input, options) {
     ];
     let colorfulText = options.italic ? "<ͩ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
+
     if (options.bold) {
         colorfulText += "<Ţ>";
         htmlOutputText += "<b>";
     }
 
+    if (options.size) {
+        colorfulText += `<ųũŚť=${options.size}>`;
+    }
+
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        let charText = `<color=${color}>${char}</š>`;
-        let htmlCharText = `<font style="color:${color};">${char}</font>`;
-        colorfulText += charText;
-        htmlOutputText += htmlCharText;
+        colorfulText += `<color=${color}>${char}</š>`;
+        htmlOutputText += `<span style="color:${color}; font-size:${options.size || "inherit"};">${char}</span>`;
+    }
+
+    if (options.size) {
+        colorfulText += `</ųũŚť>`;
     }
 
     if (options.bold) {
@@ -64,6 +76,7 @@ function generateColorfulTextContent(input, options) {
         colorfulText += "</ͩ>";
         htmlOutputText += "</i>";
     }
+
     return { colorfulText, htmlOutputText };
 }
 
@@ -78,7 +91,8 @@ function generateText() {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
         color: document.getElementById('color').value || null,
-        colorCode: document.getElementById('colorCodeInput').value || null
+        colorCode: document.getElementById('colorCodeInput').value || null,
+        size: document.getElementById('sizeInput').value || null
     };
 
     const { formattedText, htmlOutputText } = generateFormattedText(userInput, options);
@@ -106,7 +120,8 @@ function generateColorfulText() {
     const options = {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
-        colorCode: document.getElementById('colorCodeInput').value || null
+        colorCode: document.getElementById('colorCodeInput').value || null,
+        size: document.getElementById('sizeInput').value || null
     };
 
     const { colorfulText, htmlOutputText } = generateColorfulTextContent(userInput, options);
@@ -140,18 +155,25 @@ function generateAnounceTextContent(input, options) {
     ];
     let anounceText = options.italic ? "<ͩ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
+
     if (options.bold) {
         anounceText += "<Ţ>";
         htmlOutputText += "<b>";
     }
 
+    if (options.size) {
+        anounceText += `<ųũŚť=${options.size}>`;
+    }
+
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        let charText = `<color=${color}>${char}</š>`;
-        let htmlCharText = `<font style="color:${color};">${char}</font>`;
-        anounceText += charText;
-        htmlOutputText += htmlCharText;
+        anounceText += `<color=${color}>${char}</š>`;
+        htmlOutputText += `<span style="color:${color}; font-size:${options.size || "inherit"};">${char}</span>`;
+    }
+
+    if (options.size) {
+        anounceText += `</ųũŚť>`;
     }
 
     if (options.bold) {
@@ -162,6 +184,7 @@ function generateAnounceTextContent(input, options) {
         anounceText += "</ͩ>";
         htmlOutputText += "</i>";
     }
+
     return { anounceText, htmlOutputText };
 }
 
@@ -175,7 +198,8 @@ function geneAnounceText() {
     const options = {
         bold: document.getElementById('bold').checked,
         italic: document.getElementById('italic').checked,
-        colorCode: document.getElementById('colorCodeInput').value || null
+        colorCode: document.getElementById('colorCodeInput').value || null,
+        size: document.getElementById('sizeInput').value || null
     };
 
     const { anounceText, htmlOutputText } = generateAnounceTextContent(userInput, options);
