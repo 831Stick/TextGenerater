@@ -46,18 +46,22 @@ h2 {
 }
 
 input[type="color"] {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #d3d3d3;
     border-radius: 5px;
 }
 
 input[type="text"] {
-    width: calc(100% - 60px);
+    width: calc(100% - 140px);
     border: 2px solid #1e90ff;
     border-radius: 5px;
 }
-
+#sizeInput {
+    width: 80px; /* サイズ指定枠を小さくする */
+    border: 2px solid #1e90ff;
+    border-radius: 5px;
+}
 textarea {
     width: 100%;
     border: 2px solid #b9b0b0;
