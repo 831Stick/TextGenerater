@@ -1,29 +1,29 @@
 function generateFormattedText(input, options) {
-    let formattedText = options.italic ? "<ͩ>" : "";
+    let formattedText = options.italic ? "<ũ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
 
     if (options.bold) {
-        formattedText += "<Ţ>";
+        formattedText += "<ł>";
         htmlOutputText += "<b>";
     }
 
     if (options.size) {
-        formattedText += `<ųũŚť=${options.size}>`;
+        formattedText += `<ၳၩၺၥ=${options.size}>`;
     }
 
-    formattedText += `<color=${options.colorCode || options.color || "#000000"}>${input}</š>`;
+    formattedText += `<ͣolor=${options.colorCode || options.color || "#000000"}>${input}</ͣolor>`;
     htmlOutputText += `<span style="color:${options.colorCode || options.color || "#000000"}; font-size:${options.size || "inherit"};">${input}</span>`;
 
     if (options.size) {
-        formattedText += `</ųũŚť>`;
+        formattedText += `</ၳၩၺၥ>`;
     }
 
     if (options.bold) {
-        formattedText += "</Ţ>";
+        formattedText += "</ł>";
         htmlOutputText += "</b>";
     }
     if (options.italic) {
-        formattedText += "</ͩ>";
+        formattedText += "</ũ>";
         htmlOutputText += "</i>";
     }
 
@@ -45,35 +45,35 @@ function generateColorfulTextContent(input, options) {
         "#ffff5b", // Yellow
         "#ffad5b", // Orange
     ];
-    let colorfulText = options.italic ? "<ͩ>" : "";
+    let colorfulText = options.italic ? "<ũ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
 
     if (options.bold) {
-        colorfulText += "<Ţ>";
+        colorfulText += "<ł>";
         htmlOutputText += "<b>";
     }
 
     if (options.size) {
-        colorfulText += `<ųũŚť=${options.size}>`;
+        colorfulText += `<ၳၩၺၥ=${options.size}>`;
     }
 
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        colorfulText += `<color=${color}>${char}</š>`;
+        colorfulText += `<ͣolor=${color}>${char}</ͣolor>`;
         htmlOutputText += `<span style="color:${color}; font-size:${options.size || "inherit"};">${char}</span>`;
     }
 
     if (options.size) {
-        colorfulText += `</ųũŚť>`;
+        colorfulText += `</ၳၩၺၥ>`;
     }
 
     if (options.bold) {
-        colorfulText += "</Ţ>";
+        colorfulText += "</ł>";
         htmlOutputText += "</b>";
     }
     if (options.italic) {
-        colorfulText += "</ͩ>";
+        colorfulText += "</ũ>";
         htmlOutputText += "</i>";
     }
 
@@ -153,35 +153,35 @@ function generateAnounceTextContent(input, options) {
         "#adff5b", // weed
         "#ffad5b", // Orange
     ];
-    let anounceText = options.italic ? "<ͩ>" : "";
+    let anounceText = options.italic ? "<ũ>" : "";
     let htmlOutputText = options.italic ? "<i>" : "";
 
     if (options.bold) {
-        anounceText += "<Ţ>";
+        anounceText += "<ł>";
         htmlOutputText += "<b>";
     }
 
     if (options.size) {
-        anounceText += `<ųũŚť=${options.size}>`;
+        anounceText += `<ၳၩၺၥ=${options.size}>`;
     }
 
     for (let i = 0; i < input.length; i++) {
         const color = colors[i % colors.length];
         const char = input[i];
-        anounceText += `<color=${color}>${char}</š>`;
+        anounceText += `<ͣolor=${color}>${char}</ͣolor>`;
         htmlOutputText += `<span style="color:${color}; font-size:${options.size || "inherit"};">${char}</span>`;
     }
 
     if (options.size) {
-        anounceText += `</ųũŚť>`;
+        anounceText += `</ၳၩၺၥ>`;
     }
 
     if (options.bold) {
-        anounceText += "</Ţ>";
+        anounceText += "</ł>";
         htmlOutputText += "</b>";
     }
     if (options.italic) {
-        anounceText += "</ͩ>";
+        anounceText += "</ũ>";
         htmlOutputText += "</i>";
     }
 
